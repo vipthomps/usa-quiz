@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USA States & Capitals Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <h1>USA States & Capitals Quiz</h1>
+    <p>
+      Drag a <strong>state name</strong> from the left and a <strong>capital city</strong> from the right onto the correct state on the map.
+      Use the Northeast inset for easier placement on the smaller states.
+    </p>
+  </header>
+
+  <main class="layout">
+    <aside id="states-panel" class="bank-panel" aria-label="State word bank">
+      <div class="panel-header">
+        <h2>States</h2>
+        <span class="panel-pill state-pill">State Names</span>
+      </div>
+      <div id="state-bank" class="chip-bank"></div>
+    </aside>
+
+    <section class="map-panel">
+      <div class="map-toolbar">
+        <div class="toolbar-left">
+          <div id="status-text" class="status-text">Loading map…</div>
+          <div id="progress-text" class="progress-text">0 / 100 placed</div>
+        </div>
+        <div class="toolbar-right">
+          <label class="timer-label" for="timer-select">Timer</label>
+          <select id="timer-select" class="timer-select">
+            <option value="0">No timer</option>
+            <option value="60">1 minute</option>
+            <option value="180">3 minutes</option>
+            <option value="300">5 minutes</option>
+            <option value="600">10 minutes</option>
+          </select>
+          <div id="timer-display" class="timer-display">--:--</div>
+        </div>
+      </div>
+
+      <div id="map-container" class="map-container" aria-label="Interactive map of the United States"></div>
+
+      <div class="controls">
+        <button id="score-btn" class="primary-btn">Score</button>
+        <button id="hint-btn" class="secondary-btn">Hint</button>
+        <button id="reset-btn" class="secondary-btn">Reset</button>
+        <label class="mode-label" for="mode-select">Mode</label>
+        <select id="mode-select" class="mode-select">
+          <option value="both">States + Capitals</option>
+          <option value="states">States only</option>
+          <option value="capitals">Capitals only</option>
+        </select>
+      </div>
+
+      <div id="results" class="results" aria-live="polite"></div>
+      <div id="hint-result" class="hint-result" aria-live="polite"></div>
+    </section>
+
+    <aside id="capitals-panel" class="bank-panel" aria-label="Capital city bank">
+      <div class="panel-header">
+        <h2>Capitals</h2>
+        <span class="panel-pill capital-pill">Capital Cities</span>
+      </div>
+      <div id="capital-bank" class="chip-bank"></div>
+    </aside>
+  </main>
+
+  <template id="chip-template">
+    <button class="chip" draggable="true" type="button"></button>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
