@@ -12,8 +12,7 @@
   <header class="app-header">
     <h1>USA States & Capitals Quiz</h1>
     <p>
-      Drag a <strong>state name</strong> from the left and a <strong>capital city</strong> from the right onto the correct state on the map.
-      Use the Northeast inset for easier placement on the smaller states.
+      Drag from the side lists on desktop, or tap an item and then tap a state on touch devices. Use the Northeast inset for smaller states.
     </p>
   </header>
 
@@ -33,23 +32,16 @@
           <div id="progress-text" class="progress-text">0 / 100 placed</div>
         </div>
         <div class="toolbar-right">
-          <label class="timer-label" for="timer-select">Timer</label>
-          <select id="timer-select" class="timer-select">
-            <option value="0">No timer</option>
-            <option value="60">1 minute</option>
-            <option value="180">3 minutes</option>
-            <option value="300">5 minutes</option>
-            <option value="600">10 minutes</option>
-          </select>
-          <div id="timer-display" class="timer-display">--:--</div>
+          <label class="timer-label" for="timer-display">Time</label>
+          <div id="timer-display" class="timer-display" aria-live="polite">00:00</div>
         </div>
       </div>
 
+      <div id="selection-banner" class="selection-banner hidden-banner" aria-live="polite"></div>
       <div id="map-container" class="map-container" aria-label="Interactive map of the United States"></div>
 
       <div class="controls">
         <button id="score-btn" class="primary-btn">Score</button>
-        <button id="hint-btn" class="secondary-btn">Hint</button>
         <button id="reset-btn" class="secondary-btn">Reset</button>
         <label class="mode-label" for="mode-select">Mode</label>
         <select id="mode-select" class="mode-select">
@@ -57,10 +49,20 @@
           <option value="states">States only</option>
           <option value="capitals">Capitals only</option>
         </select>
+        <label class="teacher-toggle"><input id="teacher-mode-toggle" type="checkbox" /> Teacher mode</label>
+        <button id="show-answers-btn" class="secondary-btn hidden-btn">Show Answers</button>
+        <button id="hide-answers-btn" class="secondary-btn hidden-btn">Hide Answers</button>
       </div>
 
       <div id="results" class="results" aria-live="polite"></div>
-      <div id="hint-result" class="hint-result" aria-live="polite"></div>
+      <section id="teacher-panel" class="teacher-panel hidden-panel" aria-label="Teacher tools">
+        <h3>Teacher Answer Key</h3>
+        <p>Teacher mode lets you reveal the correct answers on the map without affecting placements.</p>
+      </section>
+      <section id="incorrect-panel" class="incorrect-panel hidden-panel" aria-label="Incorrect answers review">
+        <h3>Review Incorrect Answers</h3>
+        <div id="incorrect-list"></div>
+      </section>
     </section>
 
     <aside id="capitals-panel" class="bank-panel" aria-label="Capital city bank">

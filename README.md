@@ -1,36 +1,38 @@
-# USA States & Capitals Quiz (Enhanced Online Map Version v1.1)
+# USA States & Capitals Quiz (Revision - Touch + Teacher Mode)
 
-This version removes the visible **state abbreviations** from the map so the quiz does not give away the answers.
+This package is a revised GitHub / Cloudflare-ready version of the online U.S. map quiz.
 
-## Included features
+## Changes in this revision
 
-- Online U.S. state map in the center
-- State word bank on the left
-- Capital word bank on the right
-- Drag and drop onto the map
-- Score button with green/red borders and grade percentage
-- Timer mode
-- Hint mode
-- States-only / capitals-only / both selector
-- Expanded Northeast inset for easier small-state targeting
+1. The state and capital lists are now **single-column / one item wide** so the map gets more space.
+2. **Hint mode was removed.**
+3. The timer is now a **count-up stopwatch**.
+4. Added **touch / tablet-friendly placement**:
+   - desktop: drag and drop
+   - touch/mobile/tablet: tap an item, then tap a state on the map
+5. Added **Teacher mode** with **Show Answers / Hide Answers**.
+6. After scoring, the app shows a **review list of incorrect answers** with the correct answers next to them.
 
-## v1.1 change
+## Files included
 
-- Removed visible state abbreviations from the main map
-- Removed visible abbreviation labels from the Northeast inset
-- Removed hover text that revealed state names
+- `index.html`
+- `styles.css`
+- `script.js`
+- `README.md`
+- `README-CLOUDFLARE.md`
+- `CLOUDFLARE-PAGES-SETTINGS.txt`
+- `package.json`
+- `.gitignore`
+- `.github/workflows/validate-static-site.yml`
 
-## How to run
+## Local run
 
 ```bash
-cd usa-states-capitals-quiz-enhanced-v1_1-no-abbr
 python -m http.server 8000
 ```
 
-Open:
+Then open:
 
 ```text
 http://localhost:8000
 ```
-
-You can also use VS Code Live Server.
