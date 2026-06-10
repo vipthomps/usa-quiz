@@ -1,6 +1,0 @@
-Cloudflare Pages recommended settings
-------------------------------------
-Framework preset: None
-Production branch: main
-Build command: exit 0
-Build output directory: .
