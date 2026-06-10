@@ -19,9 +19,6 @@ This package is a revised GitHub / Cloudflare-ready version of the online U.S. m
 - `styles.css`
 - `script.js`
 - `README.md`
-- `README-CLOUDFLARE.md`
-- `CLOUDFLARE-PAGES-SETTINGS.txt`
-- `package.json`
 - `.gitignore`
 - `.github/workflows/validate-static-site.yml`
 
